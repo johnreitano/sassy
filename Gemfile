@@ -51,7 +51,7 @@ gem "bootsnap", require: false
 # add kuby and cockroachdb
 gem 'aws-iam-authenticator-rb', git: 'https://github.com/getkuby/aws-iam-authenticator-rb.git', tag: 'v0.1.0'
 gem 'kuby-core', '0.18.0'
-gem 'kuby-eks', '0.1.0'
+gem 'kuby-eks', '0.3.1'
 gem 'activerecord-cockroachdb-adapter'
 
 group :development, :test do
