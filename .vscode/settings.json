@@ -1,2 +1,28 @@
 {
+  "files.associations": {
+    "*.html.erb": "erb"
+  },
+  "emmet.includeLanguages": {
+    "erb": "html",
+  },
+  "[erb]": {
+    "editor.formatOnSave": true
+  },
+  "vscode-erb-beautify.useBundler": true,
+
+  // "ruby.codeCompletion": "rcodetools",
+  "solargraph.bundlerPath": "/Users/johnreitano/.asdf/shims/bundler",
+  "solargraph.useBundler": true,
+
+  "ruby.useBundler": true,
+  "ruby.format": "rubocop",
+  "ruby.rubocop.onSave": true,
+  "[ruby]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "misogi.ruby-rubocop",
+    "editor.formatOnSave": true
+  },
+  "ruby.lint": {
+    "rubocop": true
+  }
 }

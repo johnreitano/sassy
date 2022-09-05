@@ -1,9 +1,12 @@
 <h1>List of Users</h1>
-
+<p>
+  <footer>
+  </footer>
+</p>
 <% @users.each do |user| %>
-    <div>
-        <div>ID: <%= user.id %></div>
-        <div>First name: <%= user.first_name %></div>
-        <div>Last name: <%= user.last_name %></div>
-    </div>
+  <div>
+    <div>ID: <%= user.id %></div>
+    <div>First name: <%= user.first_name %></div>
+    <div>Last name: <%= user.last_name %></div>
+  </div>
 <% end %>
