@@ -1,16 +1,15 @@
-require 'active_support/core_ext'
-require 'active_support/encrypted_configuration'
+require "active_support/core_ext"
+require "active_support/encrypted_configuration"
 
-# rubocop:disable Metrics/BlockLength
-Kuby.define('sassy') do
+Kuby.define("sassy") do
   environment(:production) do
     # Because the Rails environment isn't always loaded when
     # your Kuby config is loaded, provide access to Rails
     # credentials manually.
     app_creds = ActiveSupport::EncryptedConfiguration.new(
-      config_path: File.join('config', 'credentials.yml.enc'),
-      key_path: File.join('config', 'master.key'),
-      env_key: 'RAILS_MASTER_KEY',
+      config_path: File.join("config", "credentials.yml.enc"),
+      key_path: File.join("config", "master.key"),
+      env_key: "RAILS_MASTER_KEY",
       raise_if_missing_key: true
     )
 
@@ -24,7 +23,7 @@ Kuby.define('sassy') do
       end
 
       # image_url 'johnreitano/sassy' # DockerHub
-      image_url 'ghcr.io/johnreitano/sassy' # Github
+      image_url "ghcr.io/johnreitano/sassy" # Github
     end
 
     kubernetes do
@@ -35,8 +34,8 @@ Kuby.define('sassy') do
       # provider :docker_desktop
 
       provider :eks do
-        region 'us-west-2'
-        cluster_name 'sassy-eks-6wiCCCly'
+        region "us-west-2"
+        cluster_name "sassy-eks-6wiCCCly"
 
         credentials(
           Aws::Credentials.new(

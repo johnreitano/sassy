@@ -314,7 +314,7 @@ GEM
       activerecord (>= 5.0)
       rgeo (>= 1.0.0)
     rouge (3.30.0)
-    rubocop (1.36.0)
+    rubocop (1.35.1)
       json (~> 2.3)
       parallel (~> 1.10)
       parser (>= 3.1.2.1)
@@ -326,10 +326,15 @@ GEM
       unicode-display_width (>= 1.4.0, < 3.0)
     rubocop-ast (1.21.0)
       parser (>= 3.1.1.0)
+    rubocop-performance (1.14.3)
+      rubocop (>= 1.7.0, < 2.0)
+      rubocop-ast (>= 0.4.0)
     rubocop-rails (2.15.2)
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.7.0, < 2.0)
+    rubocop-rspec (2.12.1)
+      rubocop (~> 1.31)
     ruby-progressbar (1.11.0)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
@@ -368,6 +373,9 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
+    standard (1.16.1)
+      rubocop (= 1.35.1)
+      rubocop-performance (= 1.14.3)
     statsd-instrument (3.4.0)
     stimulus-rails (1.1.0)
       railties (>= 6.0.0)
@@ -424,11 +432,12 @@ DEPENDENCIES
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.3, >= 7.0.3.1)
-  rubocop
   rubocop-rails
+  rubocop-rspec
   selenium-webdriver
   solargraph-rails (= 1.0.0.pre.1)
   sprockets-rails
+  standard
   stimulus-rails
   turbo-rails
   tzinfo-data

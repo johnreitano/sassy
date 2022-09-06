@@ -1,34 +1,23 @@
+require:
+  - standard
+  - rubocop-rails
+  - rubocop-rspec
+
+inherit_gem:
+  standard: config/base.yml
+
 AllCops:
-  TargetRubyVersion: 2.7.6
-  SuggestExtensions: false
   NewCops: enable
   Exclude:
-    - "bin/**"
-    - "node_modules/**/*"
-    - "vendor/**/*"
+    - node_modules/**/*
+    - public/**/*
+    - vendor/**/*
 
-Style/FrozenStringLiteralComment:
-  Enabled: false
-
-Style/Documentation:
-  Enabled: false
-# Style/RaiseArgs:
-#   Enabled: false
-
-# Style/StringLiterals:
-#   Enabled: true
-#   EnforcedStyle: double_quotes
-
-# Style/StringLiteralsInInterpolation:
-#   Enabled: true
-#   EnforcedStyle: double_quotes
-
-# Layout/LineLength:
-#   Max: 200
-
-# Metrics/BlockLength:
-#   Exclude:
-#    - "spec/*"
-
-# Metrics/MethodLength:
-#   Max: 40
+Rails:
+  Enabled: true # enable rubocop-rails cops
+RSpec:
+  Enabled: true # enable rubocop-rspec cops
+RSpec/DescribeClass:
+  Enabled: false # ignore missing comments on classes
+Bundler/DuplicatedGem:
+  Enabled: false # ignore duplicated gem errors because we will have duplicated gems when dual booting
